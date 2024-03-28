@@ -28,7 +28,6 @@ class FileJSON:
             PermissionError: Si no se tienen permisos para escribir en el archivo JSON.
         """
         file_json = self.get_json_file_path(file_name)
-       # data_json = self.generate_json_data(student_list)
 
         try:
             with open(file_json, 'w', encoding='utf-8') as file:

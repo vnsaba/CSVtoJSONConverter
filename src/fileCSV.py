@@ -1,6 +1,5 @@
 import csv
 import os
-from .model.student import Student
 
 class FileCSV:
     """
