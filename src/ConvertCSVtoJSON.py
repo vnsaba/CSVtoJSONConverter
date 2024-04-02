@@ -22,7 +22,8 @@ class ConverterCSVtoJSON():
 
         csv_handler = FileCSV(self.file_path_csv)
         student_list = csv_handler.read_file()
+        print(student_list)
 
-        if student_list is not None:
-            json_handler = FileJSON()
-            json_handler.write_file(student_list, self.file_path_csv)
+        if student_list != "No se encuentra ese archivo":
+            json_handler = FileJSON(self.file_path_csv)
+            json_handler.write_file(student_list)
