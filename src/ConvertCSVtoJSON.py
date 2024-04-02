@@ -6,7 +6,10 @@ class ConverterCSVtoJSON():
     """
     Clase para convertir un archivo csv a json
     """
-    def converter_file (self, file_csv):
+    def __init__(self, file_path_csv):
+        self.file_path_csv = file_path_csv
+
+    def converter_file (self):
         """
         Convierte un archivo CSV en un archivo JSON.
 
@@ -17,9 +20,9 @@ class ConverterCSVtoJSON():
         - file_csv (str): Ruta del archivo CSV que se convertirá a JSON.
         """
 
-        csv_handler = FileCSV(file_csv)
+        csv_handler = FileCSV(self.file_path_csv)
         student_list = csv_handler.read_file()
 
         if student_list is not None:
             json_handler = FileJSON()
-            json_handler.write_file(student_list, file_csv)
+            json_handler.write_file(student_list, self.file_path_csv)

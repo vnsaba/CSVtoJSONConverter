@@ -35,11 +35,8 @@ class FileCSV:
         Returns:
         - bool: True si exsite el archivo, False en caso contrario.
         """
-        exist = os.path.exists(self.file) 
-        if exist:
-            return True
-        print("No se encuentra ese archivo")   
-        return False  
+        return os.path.exists(self.file) 
+         
     def read_file (self) :
         """
         Lee el archivo CSV y devuelve una lista de objetos Student.
@@ -55,4 +52,5 @@ class FileCSV:
                     student_id, nombre, apellido = row
                     students.append({'id': student_id.strip(), 'nombre': nombre.strip(), 'apellido': apellido.strip()})
             return students
+        return "No se encuentra ese archivo"
         
